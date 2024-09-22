@@ -1,0 +1,276 @@
+<index.html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha do Personagem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden; /* Prevents overflow of content */
+        }
+
+        .name {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #4A90E2;
+            margin-bottom: 10px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .info {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #4A90E2;
+        }
+
+        .line {
+            font-size: 1.1rem;
+            margin: 8px 0;
+            padding: 5px;
+            position: relative;
+        }
+
+        .line::after {
+            content: '';
+            display: block;
+            height: 2px;
+            margin-top: 5px;
+            background: transparent;
+        }
+
+        .age {
+            color: #E94E77;
+        }
+
+        .age::after {
+            background: #E94E77;
+        }
+
+        .orientation {
+            color: #F39C12;
+        }
+
+        .orientation::after {
+            background: #F39C12;
+        }
+
+        .diagnosis {
+            color: #27AE60;
+        }
+
+        .diagnosis::after {
+            background: #27AE60;
+        }
+
+        .powers {
+            color: #8E44AD;
+            font-weight: bold;
+            background-color: #E8DAEF;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .story {
+            margin-top: 20px;
+            background-color: #F0F0F0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .story h2 {
+            margin-top: 0;
+            color: #4A90E2;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .story p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Arrange images in a column */
+            align-items: center; /* Center images */
+            margin: 20px 0;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .image-row img {
+            width: 100px; /* Ajustado para melhor encaixe */
+            height: 100px; /* Ajustado para manter o formato quadrado */
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.8); /* Blue neon shadow */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s; /* Delay before the image appears */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .autism-symbol {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4A90E2;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #357ABD;
+        }
+
+        .discreet-link {
+            color: #4A90E2;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .line {
+                font-size: 1rem;
+            }
+
+            .image-row {
+                align-items: center; /* Esta linha pode ser mantida se você quiser centralizar imagens em telas menores */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="autism-symbol" src="https://i.ibb.co/d0VSn5p/autismo.png" alt="Símbolo do Autismo">
+        <h1 class="name" id="name"></h1>
+        
+        <div class="image-container">
+            <div class="image-row">
+                <img id="character-image-1" src="https://i.ibb.co/m91HzhV/image.png" alt="Personagem 1">
+                <img id="character-image-2" src="https://i.ibb.co/WGxMwFP/image.png" alt="Personagem 2">
+                <img id="character-image-3" src="https://i.ibb.co/x77HP3z/image.png" alt="Personagem 3">
+            </div>
+        </div>
+        
+        <div class="info">
+            <div class="line age">Idade: 15 anos</div>
+            <div class="line orientation">Orientação: Bissexual</div>
+            <div class="line diagnosis">Diagnóstico: Transtorno do Espectro Autista</div>
+        </div>
+
+        <div class="story">
+            <h2>História</h2>
+            <p>
+                Emanuel Reis sempre teve uma conexão única com o mundo ao seu redor. Desde pequeno, ele percebeu que via as coisas de uma maneira diferente. Sua mente, embora desafiada pelo transtorno do espectro autista, é um vasto oceano de criatividade e imaginação. Ao longo dos anos, ele descobriu que possuía um talento extraordinário para a magia, especificamente a magia do caos.
+            </p>
+            <p>
+                Em momentos de grande emoção, Emanuel poderia canalizar essa magia, criando feitiços imprevisíveis que desafiavam as leis da natureza. Sua habilidade era frequentemente incompreendida pelos outros, mas ele aprendeu a abraçar sua singularidade. Através da prática e da autoaceitação, Emanuel tornou-se um poderoso feiticeiro, usando seus dons para proteger aqueles que ama e lutar contra as forças que ameaçam seu mundo.
+            </p>
+        </div>
+
+        <div class="story">
+            <h2>Poderes do Caos</h2>
+            <p>
+                Os poderes do caos de Emanuel são uma extensão de sua própria essência. Ele é capaz de manipular a realidade ao seu redor, criando efeitos inesperados que podem ser tanto maravilhosos quanto perigosos. Entre suas habilidades, destacam-se:
+            </p>
+            <ul>
+                <li><strong>Feitiços Aleatórios:</strong> Emanuel pode lançar feitiços que têm resultados imprevisíveis, tornando cada batalha única.</li>
+                <li><strong>Criação de Ilusões:</strong> Ele pode criar ilusões vívidas que enganam os sentidos de seus oponentes, permitindo que ele escape de situações perigosas.</li>
+                <li><strong>Manipulação de Energia:</strong> Emanuel pode absorver e redirecionar a energia ao seu redor, usando-a para aumentar sua própria força ou para criar explosões de energia.</li>
+            </ul>
+            <div class="image-container">
+                <div class="image-row">
+                    <img id="powers-image-1" src="https://i.ibb.co/qMDx7xW/image.png" alt="Poderes 1">
+                    <img id="powers-image-2" src="https://i.ibb.co/THSpKkj/image.png" alt="Poderes 2">
+                    <img id="powers-image-3" src="https://i.ibb.co/DVHfCbY/image.png" alt="Poderes 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="http://aminoapps.com/p/osnltq" class="button" target="_blank">Visite meu perfil no Amino</a>
+            <p class="discreet-link" onclick="window.open('https://www.autism-society.org/', '_blank');">Conscientização sobre o Autismo</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 20px;">created by <a href="http://aminoapps.com/p/6x5rde2" style="color: #4A90E2; text-decoration: underline;">natamino</a></p>
+    </div>
+
+    <script>
+        const nameElement = document.getElementById('name');
+        const name = "Emanuel Reis";
+        let index = 0;
+
+        function typeName() {
+            if (index < name.length) {
+                nameElement.innerHTML += name.charAt(index);
+                index++;
+                setTimeout(typeName, 100); // Ajuste o tempo para a velocidade desejada
+            }
+        }
+
+        typeName();
+
+        // Show the images with a delay
+        window.onload = function() {
+            const images = document.querySelectorAll('.image-row img');
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('visible');
+                }, 500 + (index * 200)); // Staggered delay for each image
+            });
+        };
+    </script>
+</body>
+
+</html>
